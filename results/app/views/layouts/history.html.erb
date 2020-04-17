@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Health History</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	   <!-- Generates header-->
+		<header>
+			<h1>Crystal Ball Fitness Tracker</h1>
+		</header>
+		<!-- Generates navbar-->
+		<nav>
+			<a href="/?.html">Home</a> | 
+			<a href="/?.html">History</a> |
+			<a href="/?.html">Record Data</a> |
+			<a href="/?.html">Recommendations</a>
+		</nav>
+		<% if @history.blank? %>
+			<p>You have not made any health posts.</p>
+		<% else %>
+			<ul id = "history">
+			   <% @history.each do |c| %>
+			   <li><%= link_to post.title, {:action => 'show', :id => c.id} -%></li>
+			   <% end %>
+			</ul>
+
+		<% end %>
+	   <!-- Generates footer-->
+		<footer>
+			<div><p>@user.name Health History</p></div>
+		</footer>
+   </body>
+</html>
