@@ -1,0 +1,2 @@
+class ResultsOfFitnessTest < ApplicationRecord
+end
