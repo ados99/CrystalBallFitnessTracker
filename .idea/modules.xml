@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Project-6-The-Ruby-RAMs.iml" filepath="$PROJECT_DIR$/.idea/Project-6-The-Ruby-RAMs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fitness_app.iml" filepath="$PROJECT_DIR$/.idea/modules/fitness_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/results.iml" filepath="$PROJECT_DIR$/.idea/modules/results.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/results1.iml" filepath="$PROJECT_DIR$/.idea/modules/results1.iml" />
     </modules>
   </component>
 </project>
