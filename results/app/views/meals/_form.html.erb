@@ -1,0 +1,62 @@
+<%= form_with(model: meal, local: true) do |form| %>
+  <% if meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+      <ul>
+        <% meal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Date %>
+    <%= form.date_select :Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Breakfast %>
+    <%= form.text_area :Breakfast %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Breakfast_Calorie %>
+    <%= form.number_field :Breakfast_Calorie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lunch %>
+    <%= form.text_area :Lunch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lunch_Calorie %>
+    <%= form.number_field :Lunch_Calorie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Dinner %>
+    <%= form.text_area :Dinner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Dinner_Calorie %>
+    <%= form.number_field :Dinner_Calorie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Snack %>
+    <%= form.text_area :Snack %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Snack_Calorie %>
+    <%= form.number_field :Snack_Calorie %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

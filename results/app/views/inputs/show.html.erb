@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @input.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @input.gender %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @input.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @input.weight %>
+</p>
+
+<p>
+  <strong>Float:</strong>
+  <%= @input.float %>
+</p>
+
+<%= link_to 'Edit', edit_input_path(@input) %> |
+<%= link_to 'Back', inputs_path %>

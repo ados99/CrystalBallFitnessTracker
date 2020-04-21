@@ -1,0 +1,42 @@
+<%= form_with(model: input, local: true) do |form| %>
+  <% if input.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(input.errors.count, "error") %> prohibited this input from being saved:</h2>
+
+      <ul>
+        <% input.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :float %>
+    <%= form.text_field :float %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

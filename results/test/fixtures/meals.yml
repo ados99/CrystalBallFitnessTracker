@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Date: 2020-04-21
+  Breakfast: MyText
+  Breakfast_Calorie: 1
+  Lunch: MyText
+  Lunch_Calorie: 1
+  Dinner: MyText
+  Dinner_Calorie: 1
+  Snack: MyText
+  Snack_Calorie: 1
+
+two:
+  Date: 2020-04-21
+  Breakfast: MyText
+  Breakfast_Calorie: 1
+  Lunch: MyText
+  Lunch_Calorie: 1
+  Dinner: MyText
+  Dinner_Calorie: 1
+  Snack: MyText
+  Snack_Calorie: 1

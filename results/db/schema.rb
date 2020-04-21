@@ -10,9 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_212620) do
+ActiveRecord::Schema.define(version: 2020_04_17_194355) do
+
+  create_table "breakfasts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "inputs", force: :cascade do |t|
+    t.integer "age"
+    t.string "gender"
+    t.float "height"
+    t.string "weight"
+    t.string "float"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lunches", force: :cascade do |t|
+    t.text "meal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.text "Breakfast"
+    t.text "Lunch"
+    t.text "Dinner"
+    t.text "Snacks"
+    t.integer "Calorie_Total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "results_of_fitness_tests", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
     t.date "date"
     t.time "recSleepTime"
@@ -22,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_212620) do
     t.time "recExerciseTime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_results_of_fitness_tests_on_user_id"
   end
 
 end
