@@ -13,8 +13,12 @@
 		<nav>
 			<a href="/?.html">Home</a> | 
 			<a href="/?.html">History</a> |
+			<!--
 			<a href="/?.html">Record Data</a> |
-			<a href="/?.html">Recommendations</a>
+			<a href="/?.html">Meals</a>
+			-->
+      <%= link_to 'Record Data', new_input_path %>
+      <%= link_to 'Meals', new_meal_path %>
 		</nav>
 		<p>Welcome to Our Fitness app</p>
 		<h1><%= @history.recent %></h1>
