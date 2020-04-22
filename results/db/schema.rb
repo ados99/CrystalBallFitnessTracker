@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_194355) do
+ActiveRecord::Schema.define(version: 2020_04_22_001216) do
 
   create_table "breakfasts", force: :cascade do |t|
     t.text "content"
@@ -35,11 +35,15 @@ ActiveRecord::Schema.define(version: 2020_04_17_194355) do
   end
 
   create_table "meals", force: :cascade do |t|
+    t.date "Date"
     t.text "Breakfast"
+    t.integer "Breakfast_Calorie"
     t.text "Lunch"
+    t.integer "Lunch_Calorie"
     t.text "Dinner"
-    t.text "Snacks"
-    t.integer "Calorie_Total"
+    t.integer "Dinner_Calorie"
+    t.text "Snack"
+    t.integer "Snack_Calorie"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

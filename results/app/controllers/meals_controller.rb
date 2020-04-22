@@ -10,6 +10,7 @@ class MealsController < ApplicationController
   # GET /meals/1
   # GET /meals/1.json
   def show
+    @meals = Meal.find(params[:id, :Date])
   end
 
   # GET /meals/new
@@ -19,12 +20,13 @@ class MealsController < ApplicationController
 
   # GET /meals/1/edit
   def edit
+    @meal = Meal.find(params[:id, :Date])
   end
 
   # POST /meals
-  # POST /meals.json
+  # POST /meals.5
   def create
-    @meal = Meal.new(meal_params)
+    @meal = Meal.new(params())
 
     respond_to do |format|
       if @meal.save
@@ -64,7 +66,7 @@ class MealsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meal
-      @meal = Meal.find(params[:id])
+      @meal = Meal.find(params[:id, :Date])
     end
 
     # Only allow a list of trusted parameters through.
