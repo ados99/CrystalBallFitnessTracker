@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_04_22_195327) do
 
   create_table "breakfasts", force: :cascade do |t|
@@ -17,14 +18,17 @@ ActiveRecord::Schema.define(version: 2020_04_22_195327) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+=======
+ActiveRecord::Schema.define(version: 2020_04_22_193533) do
+>>>>>>> ccb07a342dabffef88c76b10368a7cbb1aabb9ad
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
     t.string "gender"
     t.string "weight"
-    t.string "float"
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "creacdted_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.integer "height_feet"
     t.integer "height_inches"
   end
@@ -33,6 +37,10 @@ ActiveRecord::Schema.define(version: 2020_04_22_195327) do
     t.text "meal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+=======
+    t.time "bed_time"
+    t.time "wake_up_time"
+>>>>>>> ccb07a342dabffef88c76b10368a7cbb1aabb9ad
   end
 
   create_table "meals", force: :cascade do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_195327) do
     t.time "rec_exercise_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "sleep_time"
   end
 
 end
