@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_062828) do
+ActiveRecord::Schema.define(version: 2020_04_22_193533) do
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
     t.string "gender"
     t.float "height"
     t.string "weight"
-    t.string "float"
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "creacdted_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "bed_time"
+    t.time "wake_up_time"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_062828) do
     t.time "rec_exercise_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "sleep_time"
   end
 
 end
