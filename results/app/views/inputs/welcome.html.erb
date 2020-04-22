@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Health History</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	   <!-- Generates header-->
+		<header>
+			<h1>Crystal Ball Fitness Tracker</h1>
+		</header>
+		<!-- Generates navbar-->
+		<nav>
+      <%= link_to "Home", root_path %> |
+      <%= link_to "History", records_path %> |
+      <%= link_to "Record Data", inputs_path %> |
+			<%= link_to "Meals", meals_path %></a>
+		</nav>
+		<p>Welcome to Our Fitness app</p>
+		<h1>Graphs of fitness trends</h1>
+	   <!-- Generates footer-->
+		<footer>
+			<div><p>@user.name Health History</p></div>
+		</footer>
+   </body>
+</html>

@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_001216) do
-
-  create_table "breakfasts", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_04_22_062828) do
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
@@ -24,12 +18,6 @@ ActiveRecord::Schema.define(version: 2020_04_22_001216) do
     t.float "height"
     t.string "weight"
     t.string "float"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "lunches", force: :cascade do |t|
-    t.text "meal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,18 +36,14 @@ ActiveRecord::Schema.define(version: 2020_04_22_001216) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "results_of_fitness_tests", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name"
-    t.date "date"
-    t.time "recSleepTime"
+  create_table "records", force: :cascade do |t|
+    t.time "rec_sleep_time"
     t.decimal "bmi"
-    t.integer "recCalCount"
-    t.text "recFoods"
-    t.time "recExerciseTime"
+    t.integer "rec_cal_count"
+    t.text "rec_foods"
+    t.time "rec_exercise_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_results_of_fitness_tests_on_user_id"
   end
 
 end

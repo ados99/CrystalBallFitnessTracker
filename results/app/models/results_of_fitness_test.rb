@@ -1,2 +1,0 @@
-class ResultsOfFitnessTest < ApplicationRecord
-end
