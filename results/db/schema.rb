@@ -12,22 +12,34 @@
 
 ActiveRecord::Schema.define(version: 2020_04_23_201047) do
 
+  create_table "breakfasts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
     t.string "gender"
     t.string "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.time "bed_time"
-    t.time "wake_up_time"
     t.integer "height_feet"
     t.integer "height_inches"
+    t.time "bed_time"
+    t.time "wake_up_time"
     t.decimal "bmi"
     t.time "sleep_time"
     t.string "rec_exercise_time"
     t.string "rec_foods"
     t.integer "rec_cal_count"
     t.text "rec_sleep_time"
+  end
+
+  create_table "lunches", force: :cascade do |t|
+    t.text "meal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "meals", force: :cascade do |t|

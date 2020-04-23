@@ -2,6 +2,13 @@
 <head>
   <title>Health History</title>
   <meta charset="UTF-8">
+  <link href= "runningman.css" rel="stylesheet" type="text/css" >
+  <!-- for bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- Generates header-->
@@ -9,22 +16,49 @@
   <h1>Crystal Ball Fitness Tracker</h1>
 </header>
 <!-- Generates navbar-->
-<nav>
-  <%= link_to "Home | ", root_path %>
-  <% if user_signed_in? %>
-    <%= link_to "History | ", inputs_path %>
-    <%= link_to "Enter Data | ",new_input_path %>
-    <%= link_to "Meals | ", meals_path %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Log in | ", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-  <% end %>
+  <nav class="navbar navbar-expand-md bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"  <%= link_to "Home | ", root_path %> </a>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link"  <%= link_to "Enter Data | ",new_input_path %> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Meals", meals_path %> </a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: :delete %> </a>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link"  <%= link_to "Log in | ", new_user_session_path %> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  <%= link_to "Sign up", new_user_registration_path %> </a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
 </nav>
-<p>Welcome to Our Fitness app</p>
-<h1>Graphs of fitness trends</h1>
+<header>
+  <h1>Crystal Ball Fitness Tracker</h1>
+</header>
+<p>Welcome to Our Fitness app!</p>
+<div class="jumbotron" style="margin:3px ">
+  </br>
+  <p>“The groundwork for all happiness is good health.” – Leigh Hunt</p>
+</div>
+<p>Graphs of fitness trends</p>
+
 <!-- Generates footer-->
 <footer>
+  <div id='Court'>
+    <div class="move-me move-me-1">ball
+      <img src="/svg/unnamed.png" alt="Running Man">
+    </div>
+  </div>
   <div><p>@user.name's Health History</p></div>
 </footer>
 </body>
