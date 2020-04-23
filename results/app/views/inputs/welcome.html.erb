@@ -2,7 +2,7 @@
 <head>
   <title>Health History</title>
   <meta charset="UTF-8">
-  <link href= "runningman.css" rel="stylesheet" type="text/css" >
+  <link rel = "stylesheet" type = "text/css" href = "runningman.css" />
   <!-- for bootstrap -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -11,10 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Generates header-->
-<header>
-  <h1>Crystal Ball Fitness Tracker</h1>
-</header>
+
 <!-- Generates navbar-->
   <nav class="navbar navbar-expand-md bg-light">
     <ul class="navbar-nav">
@@ -40,26 +37,26 @@
         </li>
       <% end %>
     </ul>
-  </nav>
 </nav>
 <header>
-  <h1>Crystal Ball Fitness Tracker</h1>
+  <h1 class="text-success">Crystal Ball Fitness Tracker</h1>
 </header>
 <p>Welcome to Our Fitness app!</p>
-<div class="jumbotron" style="margin:3px ">
+<p>Graphs of fitness trends</p>
+<div class="jumbotron" style="padding:3px; margin:1px;">
   </br>
   <p>“The groundwork for all happiness is good health.” – Leigh Hunt</p>
 </div>
-<p>Graphs of fitness trends</p>
 
 <!-- Generates footer-->
 <footer>
+
   <div id='Court'>
-    <div class="move-me move-me-1">ball
-      <img src="/svg/unnamed.png" alt="Running Man">
+    <div class="move-me move-me-1">
+      <img src="manrunningright.png" >
     </div>
   </div>
-  <div><p>@user.name's Health History</p></div>
+  <div><p>Your Health History</p></div>
 </footer>
 </body>
 </html>
