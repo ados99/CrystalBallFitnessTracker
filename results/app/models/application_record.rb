@@ -1,6 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
-  belongs_to :user
+  belongs_to :user, optional: true
 
   def get_latest_record(record_id)
     rec = Users.select(record_id).last

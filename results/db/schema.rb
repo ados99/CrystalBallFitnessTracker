@@ -10,37 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_04_22_195327) do
-
-  create_table "breakfasts", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-=======
-ActiveRecord::Schema.define(version: 2020_04_22_193533) do
->>>>>>> ccb07a342dabffef88c76b10368a7cbb1aabb9ad
+ActiveRecord::Schema.define(version: 2020_04_23_012322) do
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
     t.string "gender"
     t.string "weight"
-    t.datetime "creacdted_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-    t.integer "height_feet"
-    t.integer "height_inches"
-  end
-
-  create_table "lunches", force: :cascade do |t|
-    t.text "meal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-=======
     t.time "bed_time"
     t.time "wake_up_time"
->>>>>>> ccb07a342dabffef88c76b10368a7cbb1aabb9ad
+    t.integer "height_feet"
+    t.integer "height_inches"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -66,6 +47,20 @@ ActiveRecord::Schema.define(version: 2020_04_22_193533) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.time "sleep_time"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
