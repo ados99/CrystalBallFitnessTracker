@@ -30,6 +30,5 @@
   <strong>BMI:</strong>
   <%= @input.bmi %>
 </p>
-<%= line_chart Input.group_by_day(:weight).count, library: {backgroundColor: "#F8F8F8"} %>
 <%= link_to 'Edit', edit_input_path(@input) %> |
 <%= link_to 'Back', inputs_path %>

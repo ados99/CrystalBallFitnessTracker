@@ -43,6 +43,8 @@
 </header>
 <p>Welcome to Our Fitness app!</p>
 <p>Graphs of fitness trends</p>
+<%= area_chart Input.group(:updated_at).average(:weight),id: "Weight Progress", width: "600px", height: "300px", label: "Weight", xtitle: "Time", ytitle: "Weight(lbs)", messages: {empty: "No data"} %>
+<%= pie_chart Meal.group(:meal).average(:Calories) %>
 <div class="jumbotron" style="padding:3px; margin:1px;">
   </br>
   <p>“The groundwork for all happiness is good health.” – Leigh Hunt</p>

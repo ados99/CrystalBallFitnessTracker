@@ -12,48 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Date %>
-    <%= form.date_select :Date %>
+  <%= form.label :meal %>
+  <%= form.select :meal, ['Breakfast','Lunch','Dinner','Snack'], :include_blank => false%>
   </div>
-
   <div class="field">
-    <%= form.label :Breakfast %>
-    <%= form.text_area :Breakfast %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Breakfast_Calorie %>
-    <%= form.number_field :Breakfast_Calorie %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Lunch %>
-    <%= form.text_area :Lunch %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Lunch_Calorie %>
-    <%= form.number_field :Lunch_Calorie %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Dinner %>
-    <%= form.text_area :Dinner %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Dinner_Calorie %>
-    <%= form.number_field :Dinner_Calorie %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Snack %>
-    <%= form.text_area :Snack %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Snack_Calorie %>
-    <%= form.number_field :Snack_Calorie %>
+    <%= form.label :Calories %>
+    <%= form.number_field :Calories %>
   </div>
 
   <div class="actions">

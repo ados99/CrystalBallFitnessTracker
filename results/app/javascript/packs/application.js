@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("chartkick")
-require("Chart.bundle")
 require("chart.js")
 require("@rails/ujs").start()
 require("turbolinks").start()
