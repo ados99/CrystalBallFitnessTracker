@@ -6,13 +6,7 @@ class ApplicationRecord < ActiveRecord::Base
     rec = Users.select(record_id).last
   end
 
-  def calculate_bmi(record_id)
-    user = get_latest_record(record_id)
-    weight = user.weight
-    height = user.height_feet
-    bmi = (weight/height) ** 2
-    user.update_attribute(:bmi, bmi)
-  end
+ 
 
   def calculate_sleep_time
     user = get_latest_record(record_id)

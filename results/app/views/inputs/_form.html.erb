@@ -18,21 +18,21 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender %>
+    <%= form.select :gender, ['Male', 'Female'], :include_blank => true%>
   </div>
 
   <div class="field">
-    <%= form.label :height_feet %>
+    Height (ft) </br>
     <%= form.text_field :height_feet %>
   </div>
 
   <div class="field">
-    <%= form.label :height_inches %>
+    Height (in) </br>
     <%= form.text_field :height_inches %>
   </div>
 
   <div class="field">
-    <%= form.label :weight %>
+    Weight (lb) </br>
     <%= form.text_field :weight %>
   </div>
 

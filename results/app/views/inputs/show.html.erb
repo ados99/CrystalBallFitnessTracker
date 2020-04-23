@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Here is your detailed report!</h1>
 <p>
   <strong>Age:</strong>
   <%= @input.age %>
@@ -11,18 +12,23 @@
 </p>
 
 <p>
-  <strong>Height_feet:</strong>
+  <strong>Height(ft):</strong>
   <%= @input.height_feet %>
 </p>
 
 <p>
-  <strong>Height_inches:</strong>
+  <strong>Height(in):</strong>
   <%= @input.height_inches %>
 </p>
 
 <p>
-  <strong>Weight:</strong>
+  <strong>Weight(lb):</strong>
   <%= @input.weight %>
+</p>
+
+<p>
+  <strong>BMI:</strong>
+  <%= @input.bmi %>
 </p>
 <%= line_chart Input.group_by_day(:weight).count, library: {backgroundColor: "#F8F8F8"} %>
 <%= link_to 'Edit', edit_input_path(@input) %> |

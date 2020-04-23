@@ -15,7 +15,7 @@ class InputsController < ApplicationController
   # GET /inputs/1
   # GET /inputs/1.json
   def show
-
+    @input = Input.find(params['id'])
   end
 
   # GET /inputs/new
@@ -34,7 +34,7 @@ class InputsController < ApplicationController
 
     respond_to do |format|
       if @input.save
-        format.html { redirect_to :controller => 'records', :action => 'show' , notice: 'Input was successfully created.' }
+        format.html { redirect_to @input}
         format.json { render :show, status: :created, location: @input }
       else
         format.html { render :new }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_012322) do
+ActiveRecord::Schema.define(version: 2020_04_23_201047) do
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2020_04_23_012322) do
     t.time "wake_up_time"
     t.integer "height_feet"
     t.integer "height_inches"
+    t.decimal "bmi"
+    t.time "sleep_time"
+    t.string "rec_exercise_time"
+    t.string "rec_foods"
+    t.integer "rec_cal_count"
+    t.text "rec_sleep_time"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -36,17 +42,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_012322) do
     t.integer "Snack_Calorie"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "records", force: :cascade do |t|
-    t.time "rec_sleep_time"
-    t.decimal "bmi"
-    t.integer "rec_cal_count"
-    t.text "rec_foods"
-    t.time "rec_exercise_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.time "sleep_time"
   end
 
   create_table "users", force: :cascade do |t|
