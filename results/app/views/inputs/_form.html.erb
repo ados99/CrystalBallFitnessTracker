@@ -22,8 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :height %>
-    <%= form.text_field :height %>
+    <%= form.label :height_feet %>
+    <%= form.text_field :height_feet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height_inches %>
+    <%= form.text_field :height_inches %>
   </div>
 
   <div class="field">
@@ -32,9 +37,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :float %>
-    <%= form.text_field :float %>
+    <%= form.label :bed_time %>
+    <%= form.text_field :bed_time %>
   </div>
+
+  <div class="field">
+    <%= form.label :wake_up_time %>
+    <%= form.text_field :wake_up_time %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

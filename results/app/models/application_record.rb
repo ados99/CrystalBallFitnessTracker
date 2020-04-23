@@ -9,7 +9,7 @@ class ApplicationRecord < ActiveRecord::Base
   def calculate_bmi(record_id)
     user = get_latest_record(record_id)
     weight = user.weight
-    height = user.height
+    height = user.height_feet
     bmi = (weight/height) ** 2
     user.update_attribute(:bmi, bmi)
   end

@@ -5,6 +5,11 @@ class InputsController < ApplicationController
   # GET /inputs.json
   def index
     @inputs = Input.all
+    respond_to do |format|
+      format.html
+      end
+
+
   end
 
   # GET /inputs/1
@@ -70,6 +75,6 @@ class InputsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def input_params
-      params.require(:input).permit(:age, :gender, :height, :weight, :float)
+      params.require(:input).permit(:age, :gender, :height_inches, :height_feet, :weight, :wake_up_time , :bed_time)
     end
 end

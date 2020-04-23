@@ -7,9 +7,9 @@
     <tr>
       <th>Age</th>
       <th>Gender</th>
-      <th>Height</th>
+      <th>Height (feet)</th>
+      <th>Height (in)</th>
       <th>Weight</th>
-      <th>Float</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +19,9 @@
       <tr>
         <td><%= input.age %></td>
         <td><%= input.gender %></td>
-        <td><%= input.height %></td>
+        <td><%= input.height_feet %></td>
+        <td><%= input.height_inches %></td>
         <td><%= input.weight %></td>
-        <td><%= input.float %></td>
         <td><%= link_to 'Show', input %></td>
         <td><%= link_to 'Edit', edit_input_path(input) %></td>
         <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,5 +31,7 @@
 </table>
 
 <br>
+
+
 
 <%= link_to 'New Input', new_input_path %>

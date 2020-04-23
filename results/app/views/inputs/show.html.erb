@@ -11,19 +11,19 @@
 </p>
 
 <p>
-  <strong>Height:</strong>
-  <%= @input.height %>
+  <strong>Height_feet:</strong>
+  <%= @input.height_feet %>
+</p>
+
+<p>
+  <strong>Height_inches:</strong>
+  <%= @input.height_inches %>
 </p>
 
 <p>
   <strong>Weight:</strong>
   <%= @input.weight %>
 </p>
-
-<p>
-  <strong>Float:</strong>
-  <%= @input.float %>
-</p>
-
+<%= line_chart Input.group_by_day(:weight).count, library: {backgroundColor: "#F8F8F8"} %>
 <%= link_to 'Edit', edit_input_path(@input) %> |
 <%= link_to 'Back', inputs_path %>
