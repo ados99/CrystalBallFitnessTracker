@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 
 <h1>Here is your detailed report!</h1>
 <p>
@@ -10,15 +11,13 @@
   <%= @input.gender %>
 </p>
 
-<p>
-  <strong>Height(ft):</strong>
-  <%= @input.height_feet %>
-</p>
 
 <p>
-  <strong>Height(in):</strong>
-  <%= @input.height_inches %>
+  <strong>Height:</strong>
+  <%= @input.height_feet%>'
+  <%= @input.height_inches%>"
 </p>
+
 
 <p>
   <strong>Weight(lb):</strong>
@@ -29,5 +28,56 @@
   <strong>BMI:</strong>
   <%= @input.bmi %>
 </p>
+
+<p>
+  <strong>Sleep Time:</strong>
+  <%= @input.sleep_time.utc.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>Recommended Calorie Count:</strong>
+  <%= (@input.rec_cal_count * 1.2).round%> - <%= (@input.rec_cal_count * 1.55).round%>
+</p>
+
+<%=
+  verdict = case @input.bmi
+            when 0..18.4
+              "You are underweight! Try integrating foods such as meat, rice, milk, and beans to increase weight!"
+            when 18.5..24.9
+              "You are at healthy weight! Keep it up!"
+            when 25.0..29.9
+              "You are overweight! Consider a diet with more whole grains, vegetables, and fruits!"
+            else
+              "You are obese! Engage in a strict exercise plan and consider a low carbohydrate and low fat diet!"
+            end
+%>
+</br>
+<%=
+  sleep = case @input.age
+          when 0..5
+            (11..14)
+          when 6..13
+            (9..11)
+          when 14..17
+            (8..10)
+          when 18..64
+            (7..9)
+          else
+            (7..8)
+          end
+
+  sleep_hours =  @input.sleep_time.utc.strftime("%H").to_i
+  if sleep === sleep_hours
+    "You are getting adequate sleep!"
+  elsif sleep_hours > sleep.max
+    "You are sleeping too much! You should only
+      need between " + sleep.min.to_s + " and " + sleep.max.to_s + " hours of sleep a night!"
+  else
+    "You are not getting adequate sleep! You should be
+      getting between" + sleep.min.to_s + "and" + sleep.max.to_s
+    "hours of sleep a night!"
+  end
+%>
+<%= line_chart Input.group_by_day(:weight).count, library: {backgroundColor: "#F8F8F8"} %>
 <%= link_to 'Edit', edit_input_path(@input) %> |
 <%= link_to 'Back', inputs_path %>

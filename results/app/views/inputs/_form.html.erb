@@ -16,7 +16,7 @@
     <%= form.number_field :age %>
   </div>
 
-  <div class="field">
+  <div class="field" id = >
     <%= form.label :gender %>
     <%= form.select :gender, ['Male', 'Female'], :include_blank => true%>
   </div>
@@ -38,14 +38,18 @@
 
   <div class="field">
     <%= form.label :bed_time %>
-    <%= form.text_field :bed_time %>
+    <%= form.time_field :bed_time %>
   </div>
 
   <div class="field">
     <%= form.label :wake_up_time %>
-    <%= form.text_field :wake_up_time %>
+    <%= form.time_field :wake_up_time %>
   </div>
 
+  <div class="field">
+    Exercise Time for today (minutes) </br>
+    <%= form.text_field :exercise_time%>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

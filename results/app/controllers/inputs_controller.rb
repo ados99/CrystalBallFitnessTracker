@@ -1,3 +1,4 @@
+
 class InputsController < ApplicationController
   before_action :set_input, only: [:show, :edit, :update, :destroy]
 
@@ -7,7 +8,7 @@ class InputsController < ApplicationController
     @inputs = Input.all
     respond_to do |format|
       format.html
-      end
+    end
 
 
   end
@@ -31,7 +32,12 @@ class InputsController < ApplicationController
   # POST /inputs.json
   def create
     @input = Input.new(input_params)
-
+    if @input.valid?
+      @input.bmi = calculate_bmi(@input.height_feet,@input.height_inches,@input.weight)
+      @input.sleep_time = Time.at(@input.wake_up_time - @input.bed_time).utc.strftime("%H:%M")
+      @input.rec_cal_count = calculate_cal_count(@input.weight,@input.height_feet,@input.height_inches,
+                                               @input.age,@input.gender)
+      end
     respond_to do |format|
       if @input.save
         format.html { redirect_to @input}
@@ -62,19 +68,31 @@ class InputsController < ApplicationController
   def destroy
     @input.destroy
     respond_to do |format|
-      format.html { redirect_to inputs_url, notice: 'Input was successfully destroyed.' }
+      format.html { redirect_to inputs_url, notice: 'Input was successfully destroyed.'}
       format.json { head :no_content }
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_input
-      @input = Input.find(params[:id])
-    end
+  def calculate_bmi(feet,inches,weight)
+    height = feet * 12 + inches
+    bmi = (703.0 * weight / (height ** 2)).round(1)
+  end
 
-    # Only allow a list of trusted parameters through.
-    def input_params
-      params.require(:input).permit(:age, :gender, :height_inches, :height_feet, :weight, :wake_up_time , :bed_time)
-    end
+  def calculate_cal_count(weight,feet,inches,age,gender)
+    cal_count = (0.453592 * weight * 10) + (6.25 * ((12*feet+inches) * 2.54)) - (5 * age)
+    gender == "Male"?cal_count+=5:cal_count-=161
+    cal_count
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_input
+    @input = Input.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def input_params
+    params.require(:input).permit(:age, :gender, :height_inches, :height_feet,
+                                  :weight, :wake_up_time , :bed_time, :exercise_time)
+  end
 end

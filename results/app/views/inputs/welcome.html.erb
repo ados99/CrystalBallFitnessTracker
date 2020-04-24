@@ -20,6 +20,7 @@
   <h1 class="text-success">Crystal Ball Fitness Tracker</h1>
 </header>
 <p>Welcome to Our Fitness app!</p>
+<% if user_signed_in? %>
 <p>PROGRESS</p>
 <div class="container">
   <div class="row">
@@ -31,6 +32,9 @@
     </div>
   </div>
 </div>
+  <% else %>
+<p>Please login or sign up to get started!</p>
+<% end %>
 <div class="jumbotron" style="padding:3px; margin:1px;">
   </br>
   <p>“The groundwork for all happiness is good health.” – Leigh Hunt</p>

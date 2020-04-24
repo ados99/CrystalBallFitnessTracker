@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_234043) do
+ActiveRecord::Schema.define(version: 2020_04_24_172448) do
 
   create_table "inputs", force: :cascade do |t|
     t.integer "age"
     t.string "gender"
-    t.string "weight"
+    t.integer "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.time "bed_time"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_234043) do
     t.integer "height_inches"
     t.decimal "bmi"
     t.time "sleep_time"
-    t.string "rec_exercise_time"
+    t.integer "exercise_time"
     t.string "rec_foods"
     t.integer "rec_cal_count"
     t.text "rec_sleep_time"
