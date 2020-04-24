@@ -2,63 +2,41 @@
 <head>
   <title>Health History</title>
   <meta charset="UTF-8">
-  <link rel = "stylesheet" type = "text/css" href = "runningman.css" />
+
   <!-- for bootstrap -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <link rel = "stylesheet" type = "text/css" href = "app/assets/stylesheets/runningman.css" >
 </head>
 <body>
 
-<!-- Generates navbar-->
-  <nav class="navbar navbar-expand-md bg-light">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link"  <%= link_to "Home | ", root_path %> </a>
-      </li>
-      <% if user_signed_in? %>
-      <li class="nav-item">
-        <a class="nav-link"  <%= link_to "Enter Data | ",new_input_path %> </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" <%= link_to "Meals", meals_path %> </a>
-      </li>
-        <li class="nav-item">
-          <a class="nav-link" <%= link_to "Log out", destroy_user_session_path, method: :delete %> </a>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <a class="nav-link"  <%= link_to "Log in | ", new_user_session_path %> </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  <%= link_to "Sign up", new_user_registration_path %> </a>
-        </li>
-      <% end %>
-    </ul>
-</nav>
+<%= render :partial => 'navbar' %>
+
 <header>
   <h1 class="text-success">Crystal Ball Fitness Tracker</h1>
 </header>
 <p>Welcome to Our Fitness app!</p>
-<p>Graphs of fitness trends</p>
+<p>PROGRESS</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
 <%= area_chart Input.group(:updated_at).average(:weight),id: "Weight Progress", width: "600px", height: "300px", label: "Weight", xtitle: "Time", ytitle: "Weight(lbs)", messages: {empty: "No data"} %>
-<%= pie_chart Meal.group(:meal).average(:Calories) %>
+    </div>
+    <div class="col-sm">
+      <%= pie_chart Meal.group(:meal).average(:Calories) %>
+    </div>
+  </div>
+</div>
 <div class="jumbotron" style="padding:3px; margin:1px;">
   </br>
   <p>“The groundwork for all happiness is good health.” – Leigh Hunt</p>
 </div>
 
-<!-- Generates footer-->
-<footer>
+<%= render :partial => 'footer' %>
 
-  <div id='Court'>
-    <div class="move-me move-me-1">
-      <img src="manrunningright.png" >
-    </div>
-  </div>
-  <div><p>Your Health History</p></div>
-</footer>
 </body>
 </html>
